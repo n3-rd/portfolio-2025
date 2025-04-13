@@ -26,9 +26,9 @@
   });
 
 </script>
-<div class="h-screen min-w-full flex items-end justify-center select-none">
+<div class="h-screen flex items-end justify-center select-none overflow-hidden w-full">
 
-<div class="absolute top-[40%] left-0 w-full z-[9999]">
+<div class="absolute top-[40%] left-[-14rem] w-[120vw] z-[9999] rotate-6 overflow-hidden">
   <MainMarquee />
 </div>
 
