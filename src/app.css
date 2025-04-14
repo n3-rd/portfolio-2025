@@ -5,4 +5,11 @@ body {
     cursor: none;
     overflow-x: hidden;
 }
+a{
+    cursor: none;
+}
+a:hover{
+    color: red;
+}
+
 
