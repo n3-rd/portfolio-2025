@@ -11,9 +11,9 @@ a{
 a:hover{
     color: red;
 }
-.project-title{
+/* .project-title{
     font-size: 6rem;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: -0.05em;
-    border-bottom: 2px solid black;
-}
+} */

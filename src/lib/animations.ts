@@ -57,7 +57,8 @@ export const marquee2Animation = () => {
 };
 
 export const textAnimation = () => {
-  const letters = document.querySelectorAll('.text-letter');
+  // Make selector more specific to only target the homepage
+  const letters = document.querySelectorAll('.main-test .text-letter');
   if (!letters.length) return null;
   
   // Set initial positions
@@ -127,7 +128,8 @@ export const marquee2AnimateOut = () => {
 };
 
 export const textAnimateOut = () => {
-  const letters = document.querySelectorAll('.text-letter');
+  // Make selector more specific to only target the homepage
+  const letters = document.querySelectorAll('.main-test .text-letter');
   if (!letters.length) return null;
   
   // Animate each letter with stagger

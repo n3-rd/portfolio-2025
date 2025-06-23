@@ -1,38 +1,73 @@
-# sv
+# Godwin Jemegah - Portfolio 2025
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, animated portfolio website built with SvelteKit, showcasing projects, photography, and professional information.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Smooth animations and transitions
+- Interactive project showcases
+- Photography gallery with parallax effects
+- Responsive design for all devices
+- Modern minimalist UI with subtle animations
+
+## Technologies Used
+
+- SvelteKit 2.0 with Svelte 5
+- TypeScript
+- TailwindCSS
+- Motion One for animations
+- UkiyoJS for parallax effects
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20.x or higher
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/godwinjemegah/portfolio-2025.git
+   cd portfolio-2025
+   ```
+
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Project Structure
+
+- `/src/routes` - Page components and routes
+- `/src/lib` - Shared components, utilities and server functions
+- `/static` - Static assets like images
+- `/src/lib/components` - Reusable components
+- `/src/lib/animations.ts` - Animation utilities
+
+## Deployment
+
+To build for production:
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+pnpm build
 ```
 
-## Developing
+The built application will be in the `build` directory, ready to be deployed to your hosting provider of choice.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Credits
 
-```bash
-npm run dev
+- Photos by Godwin Jemegah
+- Design and development by Godwin Jemegah
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## License
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+MIT License
