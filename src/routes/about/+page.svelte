@@ -109,4 +109,7 @@
     section {
         opacity: 0;
     }
+    a{
+        color: #ff0028;
+    }
 </style> 
