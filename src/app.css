@@ -2,15 +2,24 @@
 
 body {
     font-family: 'Satoshi', sans-serif;
-    cursor: none;
+    cursor: none!important;
     overflow-x: hidden;
 }
+
+/* Mobile-friendly cursor adjustments */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    a {
+        cursor: pointer;
+    }
+}
+
 a{
     cursor: none;
 }
-a:hover{
-    color: red;
-}
+
 /* .project-title{
     font-size: 6rem;
     font-weight: 300;

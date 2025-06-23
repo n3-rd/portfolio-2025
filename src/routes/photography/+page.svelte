@@ -56,10 +56,10 @@
     });
 </script>
 
-<div class="mt-24 px-4">
-   <h1 class="text-4xl">Photography</h1>
+<div class="mt-16 sm:mt-24 px-4">
+   <h1 class="text-2xl sm:text-4xl">Photography</h1>
 
-   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 mt-6 sm:mt-8">
         {#each images as image}
             <div class="w-full aspect-square overflow-hidden">
                 <img 

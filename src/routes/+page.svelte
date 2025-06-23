@@ -33,18 +33,18 @@
 </script>
 <div class="h-screen flex items-end justify-center select-none overflow-hidden w-full">
 
-<div class="absolute top-[40%] left-[-14rem] w-[120vw] z-[9999] rotate-6 overflow-hidden marquee-1">
+<div class="absolute top-[45%] lg:top-[40%] left-[-50vw] sm:left-[-14rem] w-[200vw] sm:w-[120vw] z-[9999] rotate-6 sm:rotate-[9deg!important] overflow-hidden marquee-1">
   <MainMarquee />
 </div>
-<div class="absolute top-[40%] left-[-14rem] w-[120vw] z-[9999] -rotate-6 overflow-hidden marquee-2">
+<div class="absolute top-[45%] lg:top-[40%] left-[-50vw] sm:left-[-14rem] w-[200vw] sm:w-[120vw] z-[9999] -rotate-6 sm:!-rotate-[calc(16deg* -1)] overflow-hidden marquee-2">
   <MainMarquee />
 </div>
 
-  <p class="text-[10vw] main-test tracking-tighter overflow-hidden" id="main-test"
+  <p class="text-[19vw] lg:text-[11vw] lg:text-left lg:pb-0  text-center pb-8 main-test tracking-tighter overflow-hidden cursor-pointer" id="main-test"
    onclick={() => navigateToPage("/photography")}
   >
     {#each mainText as line}
-      <span class="inline-block px-4">
+      <span class="inline-block px-2 sm:px-4">
         {#each line as char}
           <span class="text-letter translate-y-[30rem] inline-block">{char}</span>
         {/each}

@@ -153,21 +153,21 @@
      });
 </script>
 
-<div class="min-h-screen mt-24 px-6 mx-auto relative">
-    <h1 class="!text-6xl !font-light !mb-24">Projects<span class="text-red-500">.</span></h1>
+<div class="min-h-screen mt-16 sm:mt-24 px-4 sm:px-6 mx-auto relative">
+    <h1 class="!text-3xl sm:!text-6xl !font-light !mb-12 sm:!mb-24">Projects<span class="text-red-500">.</span></h1>
 
     <div class="project-list">
         {#each projects as project, i}
             <div 
-                class="project-row py-8 border-t border-gray-200 flex items-start justify-between" 
+                class="project-row py-4 sm:py-8 border-t border-gray-200 flex  sm:flex-row items-start lg:justify-between gap-4 sm:gap-0" 
                 onmouseenter={(e) => handleProjectRowEnter(e, document.getElementById(project.title) as HTMLElement)}
                 onmouseleave={(e) => handleProjectRowLeave(e, document.getElementById(project.title) as HTMLElement)}
                 onclick={() => showProjectDetails(project)}
             >
-                <div class="project-title-wrapper flex items-start">
-                    <span class="project-index text-sm text-gray-400 mr-8 mt-3 w-[30px]">{String(i + 1).padStart(2, '0')}</span>
+                <div class="project-title-wrapper flex items-start w-full sm:flex-auto">
+                    <span class="project-index text-xs sm:text-sm text-gray-400 mr-4 sm:mr-8 mt-2 sm:mt-3 w-[20px] sm:w-[30px]">{String(i + 1).padStart(2, '0')}</span>
                     <h2 
-                        class="project-title !text-[4rem] !leading-[4.9rem] !font-light uppercase" 
+                        class="project-title !text-[1.3rem] lg:!text-[4rem] !leading-[2.5rem] sm:!leading-[4.9rem] !font-light uppercase" 
                         id={project.title}
                     >
                         {#each project.title.split(' ') as word, wordIndex}
@@ -183,13 +183,13 @@
                         <span class="text-red-500">.</span>
                     </h2>
                 </div>
-                <div class="flex items-start gap-4 mt-3">
+                <div class="flex items-center sm:items-start gap-2 sm:gap-4 mt-0 sm:mt-3 sm:w-auto justify-end sm:justify-start">
                     <div class="project-tech hidden md:flex !space-x-2">
                         {#each project.technologies.slice(0, 3) as tech}
                             <span class="!text-xs !px-3 !py-1 !border !border-gray-200 !text-red-500">{tech}</span>
                         {/each}
                     </div>
-                    <div class="view-button px-4 py-2 !border !border-black hover:bg-red-500 hover:border-red-500 transition-colors duration-300 ml-4">
+                    <div class="view-button px-3 py-1 sm:px-4 sm:py-2 !border !border-black hover:bg-red-500 hover:border-red-500 transition-colors duration-300 text-sm sm:text-base">
                         View
                     </div>
                 </div>
@@ -198,33 +198,33 @@
     </div>
 
     {#if selectedProject}
-        <div class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
+        <div class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-2 sm:p-4"
              onclick={hideProjectDetails}>
-            <div class="project-details bg-white text-black p-8 max-w-5xl w-full max-h-[85vh] overflow-y-auto rounded-none opacity-0 translate-y-10 transition-all duration-300 relative"
+            <div class="project-details bg-white text-black p-4 sm:p-8 max-w-5xl w-full max-h-[85vh] overflow-y-auto rounded-none opacity-0 translate-y-10 transition-all duration-300 relative"
                  onclick={(e) => e.stopPropagation()}>
-                <button class="absolute top-6 right-6 text-3xl z-10 text-black hover:text-red-500 transition-colors" onclick={hideProjectDetails}>×</button>
+                <button class="absolute top-4 right-4 sm:top-6 sm:right-6 text-2xl sm:text-3xl z-10 text-black hover:text-red-500 transition-colors" onclick={hideProjectDetails}>×</button>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
                     <div>
-                        <h2 class="text-4xl font-light mb-4">{selectedProject.title}<span class="text-red-500">.</span></h2>
-                        <p class="text-lg mb-6 text-gray-700">{selectedProject.description}</p>
+                        <h2 class="text-2xl sm:text-4xl font-light mb-3 sm:mb-4 pr-8">{selectedProject.title}<span class="text-red-500">.</span></h2>
+                        <p class="text-sm sm:text-lg mb-4 sm:mb-6 text-gray-700">{selectedProject.description}</p>
                         
-                        <div class="mb-6">
-                            <h3 class="text-xl font-light mb-3">Technologies<span class="text-red-500">.</span></h3>
+                        <div class="mb-4 sm:mb-6">
+                            <h3 class="text-lg sm:text-xl font-light mb-2 sm:mb-3">Technologies<span class="text-red-500">.</span></h3>
                             <div class="flex flex-wrap gap-2">
                                 {#each selectedProject.technologies as tech}
-                                    <span class="border border-gray-200 px-3 py-1 rounded-full text-sm">{tech}</span>
+                                    <span class="border border-gray-200 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">{tech}</span>
                                 {/each}
                             </div>
                         </div>
                         
-                        <div class="flex gap-4 mt-8">
-                            <a href="#" class="px-6 py-2 bg-black text-white hover:bg-red-500 transition-colors">View Live</a>
-                            <a href="#" class="px-6 py-2 border-2 border-black hover:bg-black hover:text-white transition-colors">View Code</a>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
+                            <a href="#" class="px-4 py-2 sm:px-6 sm:py-2 bg-black text-white hover:bg-red-500 hover:text-black transition-colors text-center text-sm sm:text-base">View Live</a>
+                            <a href="#" class="px-4 py-2 sm:px-6 sm:py-2 border-2 border-black hover:bg-black hover:text-red-500 transition-colors text-center text-sm sm:text-base">View Code</a>
                         </div>
                     </div>
                     
-                    <div class="aspect-square md:aspect-auto overflow-hidden">
+                    <div class="aspect-square lg:aspect-auto overflow-hidden order-first lg:order-last">
                         <img src={selectedProject.image} alt={selectedProject.title} class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -248,10 +248,7 @@
         transform: translateY(10px);
     }
 
-    .project-row {
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+  
 
     .project-row:hover {
         background-color: rgba(0, 0, 0, 0.02);
@@ -265,9 +262,6 @@
         transform: translateY(0);
     }
 
-    .view-hover {
-        color: #ef4444; /* text-red-500 */
-    }
 
     /* Add this for the last project to have a bottom border */
     .project-list > div:last-child {

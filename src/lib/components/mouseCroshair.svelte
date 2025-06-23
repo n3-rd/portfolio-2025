@@ -1,19 +1,39 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  
   let mouseX = $state(0);
   let mouseY = $state(0);
+  let isMobile = $state(false);
   
   function handleMouseMove(event: MouseEvent) {
     mouseX = event.clientX;
     mouseY = event.clientY;
   }
+  
+  onMount(() => {
+    // Check if device is mobile/tablet
+    isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+    
+    const handleResize = () => {
+      isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 </script>
 
 <svelte:window onmousemove={handleMouseMove} />
 
-<div class="crosshair-container">
-  <div class="horizontal-line" style:top="{mouseY}px"></div>
-  <div class="vertical-line" style:left="{mouseX}px"></div>
-</div>
+{#if !isMobile}
+  <div class="crosshair-container hidden md:block">
+    <div class="horizontal-line" style:top="{mouseY}px"></div>
+    <div class="vertical-line" style:left="{mouseX}px"></div>
+  </div>
+{/if}
 
 <style>
   .crosshair-container {
