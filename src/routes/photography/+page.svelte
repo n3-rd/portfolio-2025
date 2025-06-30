@@ -136,6 +136,7 @@
 					class="ukiyo h-full w-full object-cover"
 					data-u-scale="1.5"
 					data-u-speed="1.5"
+					loading="lazy"
 				/>
 			</div>
 		{/each}

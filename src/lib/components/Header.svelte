@@ -17,7 +17,7 @@
 
 <header class="fixed top-0 left-0 z-50 mt-2 w-full">
 	<nav
-		class="container mx-auto flex max-w-[82vw] items-center justify-between bg-white/60 p-3 sm:p-4 md:rounded-full lg:px-6"
+		class="container mx-auto flex w-full max-w-[90%] items-center justify-between rounded-full bg-white/60 p-3 sm:p-4 md:max-w-[82vw] lg:px-6"
 	>
 		<!-- Logo / Home Link -->
 		<a href="/" class="header-logo text-xl font-bold sm:text-2xl" aria-label="Home"> G </a>
