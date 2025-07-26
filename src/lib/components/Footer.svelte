@@ -16,7 +16,7 @@
                 <a href="/photography" class="hover:text-red-500 transition-colors">Photography</a>
                 <a href="/about" class="hover:text-red-500 transition-colors">About</a>
                 <a href="mailto:hello@godwinjemegah.com" class="hover:text-red-500 transition-colors">Contact</a>
-                <a href="https://github.com/godwinjemegah" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">GitHub</a>
+                <a href="https://github.com/n3-rd" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">GitHub</a>
             </div>
         </div>
         

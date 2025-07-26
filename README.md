@@ -29,7 +29,7 @@ A modern, animated portfolio website built with SvelteKit, showcasing projects, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/godwinjemegah/portfolio-2025.git
+   git clone https://github.com/n3-rd/portfolio-2025.git
    cd portfolio-2025
    ```
 

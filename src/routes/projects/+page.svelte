@@ -159,6 +159,83 @@
      });
 </script>
 
+<svelte:head>
+	<title>Projects - Godwin Jemegah</title>
+	<meta name="description" content="Explore my web development projects including OHUN, ALTÉ COLLECTIVE, Findshortlet, and Inspolist. Built with Svelte, React, and modern web technologies." />
+	<meta name="keywords" content="web projects, Svelte projects, React projects, web development, portfolio projects, OHUN, ALTÉ COLLECTIVE, Findshortlet" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="Projects - Godwin Jemegah" />
+	<meta property="og:description" content="Explore my web development projects including OHUN, ALTÉ COLLECTIVE, Findshortlet, and Inspolist." />
+	<meta property="og:url" content="https://godwinjemegah.com/projects" />
+	<meta property="og:type" content="website" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:title" content="Projects - Godwin Jemegah" />
+	<meta property="twitter:description" content="Explore my web development projects including OHUN, ALTÉ COLLECTIVE, Findshortlet, and Inspolist." />
+	
+	<!-- Canonical -->
+	<link rel="canonical" href="https://godwinjemegah.com/projects" />
+	
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		"name": "Projects - Godwin Jemegah",
+		"description": "Web development projects portfolio",
+		"url": "https://godwinjemegah.com/projects",
+		"mainEntity": {
+			"@type": "ItemList",
+			"itemListElement": [
+				{
+					"@type": "SoftwareApplication",
+					"name": "OHUN",
+					"description": "Get synchronized song lyrics and sing along with your favorite songs.",
+					"url": "https://ohun.vercel.app",
+					"applicationCategory": "Music Application",
+					"operatingSystem": "Web",
+					"author": {
+						"@type": "Person",
+						"name": "Godwin Jemegah"
+					}
+				},
+				{
+					"@type": "WebSite",
+					"name": "ALTÉ COLLECTIVE",
+					"description": "A community-driven platform for sharing and discovering growing Nigerian alternative music, art, and culture.",
+					"url": "https://alte-collective.vercel.app",
+					"author": {
+						"@type": "Person",
+						"name": "Godwin Jemegah"
+					}
+				},
+				{
+					"@type": "WebSite",
+					"name": "Findshortlet",
+					"description": "The ultimate platform connecting property owners with tenants for both short-term stays and long-term rentals.",
+					"url": "https://findshortlet.com",
+					"author": {
+						"@type": "Person",
+						"name": "Godwin Jemegah"
+					}
+				},
+				{
+					"@type": "WebSite",
+					"name": "Inspolist",
+					"description": "A photography portfolio with image galleries, parallax scrolling effects, and lightbox features.",
+					"url": "https://inspolist.netlify.app",
+					"author": {
+						"@type": "Person",
+						"name": "Godwin Jemegah"
+					}
+				}
+			]
+		}
+	}
+	</script>
+</svelte:head>
+
 <div class="min-h-screen mt-16 sm:mt-24 px-4 sm:px-6 mx-auto relative">
     <h1 class="projects-title !text-2xl sm:!text-3xl lg:!text-6xl !font-light !mb-8 sm:!mb-12 lg:!mb-24">Projects<span class="text-red-500">.</span></h1>
 

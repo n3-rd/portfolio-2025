@@ -130,6 +130,52 @@
     });
 </script>
 
+<svelte:head>
+	<title>Photography - Godwin Jemegah</title>
+	<meta name="description" content="Explore my photography portfolio featuring a collection of artistic and professional photographs. View my visual work and creative projects." />
+	<meta name="keywords" content="photography, portfolio, artistic photography, professional photos, visual work, creative photography" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="Photography - Godwin Jemegah" />
+	<meta property="og:description" content="Explore my photography portfolio featuring a collection of artistic and professional photographs." />
+	<meta property="og:url" content="https://godwinjemegah.com/photography" />
+	<meta property="og:type" content="website" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:title" content="Photography - Godwin Jemegah" />
+	<meta property="twitter:description" content="Explore my photography portfolio featuring a collection of artistic and professional photographs." />
+	
+	<!-- Canonical -->
+	<link rel="canonical" href="https://godwinjemegah.com/photography" />
+	
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ImageGallery",
+		"name": "Photography - Godwin Jemegah",
+		"description": "Photography portfolio featuring artistic and professional photographs",
+		"url": "https://godwinjemegah.com/photography",
+		"author": {
+			"@type": "Person",
+			"name": "Godwin Jemegah"
+		},
+		"numberOfItems": {images ? images.length : 0},
+		"mainEntity": {
+			"@type": "ItemList",
+			"itemListElement": [
+				{
+					"@type": "ImageObject",
+					"name": "Photography Portfolio",
+					"description": "Collection of artistic and professional photographs",
+					"url": "https://godwinjemegah.com/photography"
+				}
+			]
+		}
+	}
+	</script>
+</svelte:head>
+
 <div class="min-h-screen mt-16 sm:mt-24 px-4 sm:px-6 mx-auto relative">
    <h1 class="!text-2xl sm:!text-3xl lg:!text-6xl !font-light !mb-8 sm:!mb-12 lg:!mb-24">Photography<span class="text-red-500">.</span></h1>
 

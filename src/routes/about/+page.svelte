@@ -28,6 +28,66 @@
     });
 </script>
 
+<svelte:head>
+	<title>About - Godwin Jemegah</title>
+	<meta name="description" content="Learn more about Godwin Jemegah, a web developer and designer specializing in Svelte, React, and modern web technologies. View skills, experience, and contact information." />
+	<meta name="keywords" content="Godwin Jemegah, web developer, designer, Svelte, React, JavaScript, TypeScript, UI/UX design, portfolio" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="About - Godwin Jemegah" />
+	<meta property="og:description" content="Learn more about Godwin Jemegah, a web developer and designer specializing in Svelte, React, and modern web technologies." />
+	<meta property="og:url" content="https://godwinjemegah.com/about" />
+	<meta property="og:type" content="website" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:title" content="About - Godwin Jemegah" />
+	<meta property="twitter:description" content="Learn more about Godwin Jemegah, a web developer and designer specializing in Svelte, React, and modern web technologies." />
+	
+	<!-- Canonical -->
+	<link rel="canonical" href="https://godwinjemegah.com/about" />
+	
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Godwin Jemegah",
+		"jobTitle": "Web Developer & Designer",
+		"description": "Web developer and designer specializing in Svelte, React, and modern web technologies",
+		"url": "https://godwinjemegah.com",
+		"email": "hello@godwinjemegah.com",
+		"sameAs": [
+			"https://www.linkedin.com/in/godwin-jemegah-759866203/",
+			"https://github.com/n3-rd"
+		],
+		"knowsAbout": [
+			"JavaScript",
+			"TypeScript", 
+			"Svelte",
+			"React",
+			"Next.js",
+			"Node.js",
+			"HTML/CSS",
+			"TailwindCSS",
+			"UI/UX Design",
+			"Motion Design",
+			"Responsive Web Design",
+			"Figma",
+			"Adobe Creative Suite",
+			"Photography"
+		],
+		"hasOccupation": {
+			"@type": "Occupation",
+			"name": "Web Developer",
+			"occupationLocation": {
+				"@type": "Place",
+				"name": "Remote"
+			}
+		}
+	}
+	</script>
+</svelte:head>
+
 <div class="mt-16 sm:mt-24 px-4 max-w-4xl mx-auto">
     <h1 class="text-xl sm:text-2xl lg:text-4xl mb-6 sm:mb-8 lg:mb-12">About<span class="text-red-500">.</span></h1>
 
