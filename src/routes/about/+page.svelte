@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="animate-in opacity-0">
+        <!-- <section class="animate-in opacity-0">
             <h2 class="text-xl sm:text-2xl mb-2 sm:mb-3 font-medium">Experience<span class="text-red-500">.</span></h2>
             <div class="space-y-4 sm:space-y-6">
                 <div>
@@ -91,7 +91,7 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section class="animate-in opacity-0">
             <h2 class="text-xl sm:text-2xl mb-2 sm:mb-3 font-medium">Contact<span class="text-red-500">.</span></h2>

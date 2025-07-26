@@ -164,5 +164,156 @@ export const navigateToPage = (page: string) => {
   // After animations complete, navigate
   setTimeout(() => {
     goto(page);
-  }, 1000);
+  }, 2000);
+};
+
+// Projects page animations
+export const projectsPageAnimation = () => {
+  const projectRows = document.querySelectorAll('.project-row');
+  if (!projectRows.length) return null;
+  
+  // Set initial positions
+  projectRows.forEach((row) => {
+    (row as HTMLElement).style.transform = 'translateY(100px)';
+    (row as HTMLElement).style.opacity = '0';
+  });
+  
+  // Animate each row with stagger
+  const animations: Animation[] = [];
+  
+  Array.from(projectRows).forEach((row, index) => {
+    const animation = (row as HTMLElement).animate(
+      [
+        { 
+          transform: 'translateY(100px)',
+          opacity: '0'
+        },
+        { 
+          transform: 'translateY(0)',
+          opacity: '1'
+        }
+      ],
+      {
+        duration: 800,
+        delay: index * 150, // Stagger effect
+        easing: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+        fill: "forwards"
+      }
+    );
+    
+    animations.push(animation);
+  });
+  
+  return animations;
+};
+
+export const projectsPageAnimateOut = () => {
+  const projectRows = document.querySelectorAll('.project-row');
+  if (!projectRows.length) return null;
+  
+  // Animate each row with stagger
+  const animations: Animation[] = [];
+  
+  Array.from(projectRows).forEach((row, index) => {
+    const animation = (row as HTMLElement).animate(
+      [
+        { 
+          transform: 'translateY(0)',
+          opacity: '1'
+        },
+        { 
+          transform: 'translateY(-100px)',
+          opacity: '0'
+        }
+      ],
+      {
+        duration: 600,
+        delay: index * 100, // Faster stagger for exit
+        easing: "ease-in",
+        fill: "forwards"
+      }
+    );
+    
+    animations.push(animation);
+  });
+  
+  return animations;
+};
+
+export const projectsTitleAnimation = () => {
+  const title = document.querySelector('.projects-title');
+  if (!title) return null;
+  
+  // Set initial position
+  (title as HTMLElement).style.transform = 'translateY(50px)';
+  (title as HTMLElement).style.opacity = '0';
+  
+  return (title as HTMLElement).animate(
+    [
+      { 
+        transform: 'translateY(50px)',
+        opacity: '0'
+      },
+      { 
+        transform: 'translateY(0)',
+        opacity: '1'
+      }
+    ],
+    {
+      duration: 1000,
+      easing: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+      fill: "forwards"
+    }
+  );
+};
+
+export const projectsTitleAnimateOut = () => {
+  const title = document.querySelector('.projects-title');
+  if (!title) return null;
+  
+  return (title as HTMLElement).animate(
+    [
+      { 
+        transform: 'translateY(0)',
+        opacity: '1'
+      },
+      { 
+        transform: 'translateY(-50px)',
+        opacity: '0'
+      }
+    ],
+    {
+      duration: 800,
+      easing: "ease-in",
+      fill: "forwards"
+    }
+  );
+};
+
+// Generic navigation function that handles different pages
+export const navigateWithExitAnimation = (page: string) => {
+  // Check current page and apply appropriate exit animations
+  const currentPath = window.location.pathname;
+  
+  if (currentPath === '/') {
+    // Homepage exit animations
+    textAnimateOut();
+    marquee1AnimateOut();
+    marquee2AnimateOut();
+    setTimeout(() => {
+      goto(page);
+    }, 2000);
+  } else if (currentPath === '/projects') {
+    // Projects page exit animations
+    projectsTitleAnimateOut();
+    projectsPageAnimateOut();
+    setTimeout(() => {
+      goto(page);
+    }, 1500);
+  } else {
+    // Default navigation for other pages
+    setTimeout(() => {
+      goto(page);
+    }, 300);
+  }
 };

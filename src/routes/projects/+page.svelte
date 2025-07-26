@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { animate } from "motion";
 	import { onMount } from "svelte";
+	import { goto } from "$app/navigation";
+	import { projectsPageAnimation, projectsPageAnimateOut, projectsTitleAnimation, projectsTitleAnimateOut, navigateWithExitAnimation } from "$lib/animations";
 
     interface Project {
         title: string;
@@ -150,11 +152,15 @@
      onMount(() => {
         const projectTitles = document.querySelectorAll(".project-title");
         console.log(projectTitles);
+        
+        // Start entrance animations
+        projectsTitleAnimation();
+        projectsPageAnimation();
      });
 </script>
 
 <div class="min-h-screen mt-16 sm:mt-24 px-4 sm:px-6 mx-auto relative">
-    <h1 class="!text-3xl sm:!text-6xl !font-light !mb-12 sm:!mb-24">Projects<span class="text-red-500">.</span></h1>
+    <h1 class="projects-title !text-3xl sm:!text-6xl !font-light !mb-12 sm:!mb-24">Projects<span class="text-red-500">.</span></h1>
 
     <div class="project-list">
         {#each projects as project, i}
