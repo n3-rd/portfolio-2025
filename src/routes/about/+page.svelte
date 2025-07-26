@@ -29,12 +29,12 @@
 </script>
 
 <div class="mt-16 sm:mt-24 px-4 max-w-4xl mx-auto">
-    <h1 class="text-2xl sm:text-4xl mb-8 sm:mb-12">About<span class="text-red-500">.</span></h1>
+    <h1 class="text-xl sm:text-2xl lg:text-4xl mb-6 sm:mb-8 lg:mb-12">About<span class="text-red-500">.</span></h1>
 
-    <div class="flex flex-col gap-6 sm:gap-10">
+    <div class="flex flex-col gap-4 sm:gap-6 lg:gap-10">
         <section class="animate-in opacity-0">
-            <h2 class="text-xl sm:text-2xl mb-2 sm:mb-3 font-medium">Godwin Jemegah</h2>
-            <p class="text-base sm:text-lg leading-relaxed">
+            <h2 class="text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 font-medium">Godwin Jemegah</h2>
+            <p class="text-sm sm:text-base lg:text-lg leading-relaxed">
                 I'm a passionate web developer and designer with a keen eye for creating intuitive and visually 
                 appealing digital experiences. With expertise in modern web technologies and a strong 
                 background in design principles, I bring ideas to life through clean code and thoughtful UX.
@@ -42,11 +42,11 @@
         </section>
 
         <section class="animate-in opacity-0">
-            <h2 class="text-xl sm:text-2xl mb-2 sm:mb-3 font-medium">Skills<span class="text-red-500">.</span></h2>
+            <h2 class="text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 font-medium">Skills<span class="text-red-500">.</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                    <h3 class="text-lg sm:text-xl mb-2">Development</h3>
-                    <ul class="list-disc pl-5 space-y-1">
+                    <h3 class="text-base sm:text-lg lg:text-xl mb-2">Development</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm sm:text-base">
                         <li>JavaScript/TypeScript</li>
                         <li>Svelte & SvelteKit</li>
                         <li>React & Next.js</li>
@@ -56,8 +56,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg sm:text-xl mb-2">Design</h3>
-                    <ul class="list-disc pl-5 space-y-1">
+                    <h3 class="text-base sm:text-lg lg:text-xl mb-2">Design</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-sm sm:text-base">
                         <li>UI/UX Design</li>
                         <li>Motion Design</li>
                         <li>Responsive Web Design</li>
@@ -94,12 +94,12 @@
         </section> -->
 
         <section class="animate-in opacity-0">
-            <h2 class="text-xl sm:text-2xl mb-2 sm:mb-3 font-medium">Contact<span class="text-red-500">.</span></h2>
-            <p class="text-base sm:text-lg mb-4">Interested in working together? Reach out via:</p>
+            <h2 class="text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 font-medium">Contact<span class="text-red-500">.</span></h2>
+            <p class="text-sm sm:text-base lg:text-lg mb-4">Interested in working together? Reach out via:</p>
             <div class="flex flex-col space-y-2">
-                <a href="mailto:hello@godwinjemegah.com" class="text-base sm:text-lg hover:text-red-500 transition-colors">hello@godwinjemegah.com</a>
-                <a href="https://linkedin.com/in/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-base sm:text-lg hover:text-red-500 transition-colors">LinkedIn</a>
-                <a href="https://github.com/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-base sm:text-lg hover:text-red-500 transition-colors">GitHub</a>
+                <a href="mailto:hello@godwinjemegah.com" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">hello@godwinjemegah.com</a>
+                <a href="https://linkedin.com/in/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">LinkedIn</a>
+                <a href="https://github.com/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">GitHub</a>
             </div>
         </section>
     </div>

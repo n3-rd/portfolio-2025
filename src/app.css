@@ -5,11 +5,15 @@ body {
     cursor: none!important;
     overflow-x: hidden;
 }
+*{
+    cursor: none!important;
+}
 
 /* Mobile-friendly cursor adjustments */
 @media (max-width: 768px) {
     body {
         cursor: auto;
+        overflow-x: hidden;
     }
     a {
         cursor: pointer;

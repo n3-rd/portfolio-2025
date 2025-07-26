@@ -160,24 +160,32 @@
 </script>
 
 <div class="min-h-screen mt-16 sm:mt-24 px-4 sm:px-6 mx-auto relative">
-    <h1 class="projects-title !text-3xl sm:!text-6xl !font-light !mb-12 sm:!mb-24">Projects<span class="text-red-500">.</span></h1>
+    <h1 class="projects-title !text-2xl sm:!text-3xl lg:!text-6xl !font-light !mb-8 sm:!mb-12 lg:!mb-24">Projects<span class="text-red-500">.</span></h1>
 
     <div class="project-list">
         {#each projects as project, i}
             <div 
-                class="project-row py-4 sm:py-8 border-t border-gray-200 flex  sm:flex-row items-start lg:justify-between gap-4 sm:gap-0" 
+                class="project-row py-3 sm:py-4 lg:py-8 border-t border-gray-200 flex  items-start lg:justify-between gap-3 sm:gap-4 lg:gap-0" 
+                role="button"
+                tabindex="0"
                 onmouseenter={(e) => handleProjectRowEnter(e, document.getElementById(project.title) as HTMLElement)}
                 onmouseleave={(e) => handleProjectRowLeave(e, document.getElementById(project.title) as HTMLElement)}
                 onclick={() => showProjectDetails(project)}
+                onkeydown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        showProjectDetails(project);
+                    }
+                }}
             >
                 <div class="project-title-wrapper flex items-start w-full sm:flex-auto">
-                    <span class="project-index text-xs sm:text-sm text-gray-400 mr-4 sm:mr-8 mt-2 sm:mt-3 w-[20px] sm:w-[30px]">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="project-index text-xs sm:text-sm text-gray-400 mr-3 sm:mr-4 lg:mr-8 mt-1 sm:mt-2 lg:mt-3 w-[15px] sm:w-[20px] lg:w-[30px]">{String(i + 1).padStart(2, '0')}</span>
                     <h2 
-                        class="project-title !text-[1.3rem] lg:!text-[4rem] !leading-[2.5rem] sm:!leading-[4.9rem] !font-light uppercase" 
+                        class="project-title !text-lg sm:!text-[1.3rem] lg:!text-[4rem] !leading-6 sm:!leading-[2.5rem] lg:!leading-[4.9rem] !font-light uppercase" 
                         id={project.title}
                     >
                         {#each project.title.split(' ') as word, wordIndex}
-                            <span class="word inline-block mr-[0.3em]">
+                            <span class="word inline-block mr-[0.2em] sm:mr-[0.3em]">
                                 {#each word.split('') as char}
                                     <span class="letter-container inline-block relative overflow-hidden">
                                         <span class="original-letter inline-block">{char}</span>
@@ -189,13 +197,16 @@
                         <span class="text-red-500">.</span>
                     </h2>
                 </div>
-                <div class="flex items-center sm:items-start gap-2 sm:gap-4 mt-0 sm:mt-3 sm:w-auto justify-end sm:justify-start">
-                    <div class="project-tech hidden md:flex !space-x-2">
-                        {#each project.technologies.slice(0, 3) as tech}
-                            <span class="!text-xs !px-3 !py-1 !border !border-gray-200 !text-red-500">{tech}</span>
+                <div class="flex items-center sm:items-start gap-2 sm:gap-4 mt-2 sm:mt-0 lg:mt-3 sm:w-auto justify-start sm:justify-end lg:justify-start">
+                    <div class="project-tech md:flex !space-x-2 hidden lg:flex">
+                        {#each project.technologies.slice(0, 2) as tech}
+                            <span class="!text-xs !px-2 !py-1 sm:!px-3 !border !border-gray-200 !text-red-500">{tech}</span>
                         {/each}
+                        {#if project.technologies.length > 2}
+                            <span class="!text-xs !px-2 !py-1 sm:!px-3 !border !border-gray-200 !text-gray-400">+{project.technologies.length - 2}</span>
+                        {/if}
                     </div>
-                    <div class="view-button px-3 py-1 sm:px-4 sm:py-2 !border !border-black hover:bg-red-500 hover:border-red-500 transition-colors duration-300 text-sm sm:text-base">
+                    <div class="view-button px-3 py-1 sm:px-4 sm:py-2 !border !border-black hover:bg-red-500 hover:border-red-500 transition-colors duration-300 text-sm">
                         View
                     </div>
                 </div>
@@ -204,29 +215,50 @@
     </div>
 
     {#if selectedProject}
-        <div class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-2 sm:p-4"
-             onclick={hideProjectDetails}>
-            <div class="project-details bg-white text-black p-4 sm:p-8 max-w-5xl w-full max-h-[85vh] overflow-y-auto rounded-none opacity-0 translate-y-10 transition-all duration-300 relative"
+        <div 
+            class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-3 sm:p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-title"
+            onclick={hideProjectDetails}
+            tabindex="0"
+            onkeydown={(e) => {
+                if (e.key === 'Escape') {
+                    hideProjectDetails();
+                }
+            }}
+        >
+            <div class="project-details bg-white text-black p-4 sm:p-6 lg:p-8 max-w-5xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-y-auto rounded-none opacity-0 translate-y-10 transition-all duration-300 relative"
                  onclick={(e) => e.stopPropagation()}>
-                <button class="absolute top-4 right-4 sm:top-6 sm:right-6 text-2xl sm:text-3xl z-10 text-black hover:text-red-500 transition-colors" onclick={hideProjectDetails}>×</button>
+                <button 
+                    class="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6 text-xl sm:text-2xl lg:text-3xl z-10 text-black hover:text-red-500 transition-colors" 
+                    onclick={hideProjectDetails}
+                    onkeydown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            hideProjectDetails();
+                        }
+                    }}
+                    aria-label="Close project details"
+                >×</button>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                     <div>
-                        <h2 class="text-2xl sm:text-4xl font-light mb-3 sm:mb-4 pr-8">{selectedProject.title}<span class="text-red-500">.</span></h2>
-                        <p class="text-sm sm:text-lg mb-4 sm:mb-6 text-gray-700">{selectedProject.description}</p>
+                        <h2 id="project-title" class="text-xl sm:text-2xl lg:text-4xl font-light mb-2 sm:mb-3 lg:mb-4 pr-6 sm:pr-8">{selectedProject.title}<span class="text-red-500">.</span></h2>
+                        <p class="text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 text-gray-700">{selectedProject.description}</p>
                         
                         <div class="mb-4 sm:mb-6">
-                            <h3 class="text-lg sm:text-xl font-light mb-2 sm:mb-3">Technologies<span class="text-red-500">.</span></h3>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-light mb-2 sm:mb-3">Technologies<span class="text-red-500">.</span></h3>
                             <div class="flex flex-wrap gap-2">
                                 {#each selectedProject.technologies as tech}
-                                    <span class="border border-gray-200 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">{tech}</span>
+                                    <span class="border border-gray-200 px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm">{tech}</span>
                                 {/each}
                             </div>
                         </div>
                         
-                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
-                            <a href="#" class="px-4 py-2 sm:px-6 sm:py-2 bg-black text-white hover:bg-red-500 hover:text-black transition-colors text-center text-sm sm:text-base">View Live</a>
-                            <a href="#" class="px-4 py-2 sm:px-6 sm:py-2 border-2 border-black hover:bg-black hover:text-red-500 transition-colors text-center text-sm sm:text-base">View Code</a>
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 lg:mt-8">
+                            <a href="#" class="px-4 py-2 sm:px-6 bg-black text-white hover:bg-red-500 hover:text-black transition-colors text-center text-sm sm:text-base">View Live</a>
+                            <a href="#" class="px-4 py-2 sm:px-6 border-2 border-black hover:bg-black hover:text-red-500 transition-colors text-center text-sm sm:text-base">View Code</a>
                         </div>
                     </div>
                     
