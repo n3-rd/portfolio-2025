@@ -97,9 +97,8 @@
             <h2 class="text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3 font-medium">Contact<span class="text-red-500">.</span></h2>
             <p class="text-sm sm:text-base lg:text-lg mb-4">Interested in working together? Reach out via:</p>
             <div class="flex flex-col space-y-2">
-                <a href="mailto:hello@godwinjemegah.com" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">hello@godwinjemegah.com</a>
-                <a href="https://linkedin.com/in/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">LinkedIn</a>
-                <a href="https://github.com/godwinjemegah" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">GitHub</a>
+                <a href="mailto:godwinjdayo@gmail.com" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">godwinjdayo@gmail.com</a>
+                <a href="https://github.com/n3-rd" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base lg:text-lg hover:text-red-500 transition-colors">GitHub</a>
             </div>
         </section>
     </div>
