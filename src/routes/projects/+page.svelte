@@ -305,6 +305,8 @@
                 }
             }}
         >
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
             <div class="project-details bg-white text-black p-4 sm:p-6 lg:p-8 max-w-5xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-y-auto rounded-none opacity-0 translate-y-10 transition-all duration-300 relative"
                  onclick={(e) => e.stopPropagation()}>
                 <button 
@@ -334,8 +336,12 @@
                         </div>
                         
                         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 lg:mt-8">
-                            <a href="#" class="px-4 py-2 sm:px-6 bg-black text-white hover:bg-red-500 hover:text-black transition-colors text-center text-sm sm:text-base">View Live</a>
-                            <a href="#" class="px-4 py-2 sm:px-6 border-2 border-black hover:bg-black hover:text-red-500 transition-colors text-center text-sm sm:text-base">View Code</a>
+                            {#if selectedProject.url}
+                                <a href={selectedProject.url} class="px-4 py-2 sm:px-6 bg-black text-white hover:bg-red-500 hover:text-black transition-colors text-center text-sm sm:text-base"
+                                target="_blank"
+                                >View Live</a>
+                            {/if}
+                           
                         </div>
                     </div>
                     
